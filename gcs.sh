@@ -6,10 +6,6 @@ stty erase ^H
 sh_ver='1.4.2'
 github='https://raw.githubusercontent.com/anthonydeng2000/gcs/master'
 new_ver=$(curl -s "${github}"/gcs/gcs.sh|grep 'sh_ver='|head -1|awk -F '=' '{print $2}'|sed $'s/\'//g')
-if [[ $sh_ver != "${new_ver}" ]]; then
-	wget -qO gcs.sh ${github}/gcs/gcs.sh
-	exec ./gcs.sh
-fi
 
 green_font(){
 	echo -e "\033[32m\033[01m$1\033[0m\033[37m\033[01m$2\033[0m"
