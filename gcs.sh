@@ -4,7 +4,7 @@ export PATH
 stty erase ^H
 
 sh_ver='1.4.2'
-github='https://raw.githubusercontent.com/AmuyangA/public/master'
+github='https://raw.githubusercontent.com/anthonydeng2000/gcs/master'
 new_ver=$(curl -s "${github}"/gcs/gcs.sh|grep 'sh_ver='|head -1|awk -F '=' '{print $2}'|sed $'s/\'//g')
 if [[ $sh_ver != "${new_ver}" ]]; then
 	wget -qO gcs.sh ${github}/gcs/gcs.sh
