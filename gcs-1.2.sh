@@ -37,7 +37,7 @@ elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
 	release="centos"
 fi
 
-ssh_port=$(hostname -f|awk -F '-' '{print $2}')
+ssh_port="6000"
 HOSTNAME="$(hostname -f|awk -F "${ssh_port}-" '{print $2}').cloudshell.dev"
 ip_path="$(pwd)/ipadd"
 IP=$(curl -s ipinfo.io/ip)
